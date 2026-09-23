@@ -1,0 +1,20 @@
+# Configuração de build e deploy da Netlify.
+# Como este é um projeto puramente estático (HTML/CSS/JS puro,
+# sem framework), não há passo de "build": a Netlify apenas
+# publica os arquivos como estão.
+
+[build]
+  # Pasta que contém os arquivos publicados. "." significa a raiz do projeto.
+  publish = "."
+
+  # Não há comando de build necessário (não usamos React, Vite, etc.).
+  # Se um dia você adicionar Netlify Functions, o comando de build
+  # continua desnecessário para funções em JavaScript puro.
+  command = ""
+
+# Pasta onde ficariam eventuais Netlify Functions (ver README.md
+# sobre integrações futuras, como uma API do WhatsApp).
+# Esta pasta não existe ainda neste projeto — a Netlify simplesmente
+# ignora esta linha até que você crie a pasta e adicione funções nela.
+[functions]
+  directory = "netlify/functions"

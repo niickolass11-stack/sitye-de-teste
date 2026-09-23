@@ -1,0 +1,390 @@
+/* =========================================================
+   TOKENS — cores, tipografia e espaçamentos do projeto
+   Centralizar tudo aqui facilita adaptar o visual depois
+   para os sites reais de clientes.
+   ========================================================= */
+:root {
+  --tinta: #14171f;        /* texto principal / fundo do header e hero */
+  --papel: #f4f5f2;        /* fundo geral da página */
+  --papel-alt: #eceee9;    /* fundo alternado das seções */
+  --branco: #ffffff;
+  --azul: #3d5afe;         /* cor primária (links, destaques) */
+  --azul-escuro: #2b3fc7;
+  --verde: #00b894;        /* cor de ação principal (CTA / sucesso) */
+  --verde-escuro: #00937a;
+  --whatsapp: #25d366;
+  --texto-muted: #5a5f6b;
+  --borda: #dcded9;
+
+  --fonte-titulo: "Space Grotesk", system-ui, sans-serif;
+  --fonte-corpo: "Inter", system-ui, sans-serif;
+  --fonte-mono: "JetBrains Mono", monospace;
+
+  --raio: 10px;
+  --container: 1120px;
+}
+
+/* =========================================================
+   RESET BÁSICO
+   ========================================================= */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte-corpo);
+  color: var(--tinta);
+  background: var(--papel);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2rem, 4vw + 1rem, 3.25rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 2vw + 1rem, 2.25rem); font-weight: 600; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+
+p { margin: 0 0 1em; color: var(--texto-muted); max-width: 62ch; }
+
+a { color: var(--azul); text-decoration: none; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container--form { max-width: 760px; }
+
+/* Foco visível para acessibilidade via teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--azul);
+  outline-offset: 2px;
+}
+
+/* Respeita usuários que preferem menos animação */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: var(--raio);
+  border: 1px solid transparent;
+  font-family: var(--fonte-corpo);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.btn--primary { background: var(--verde); color: var(--branco); }
+.btn--primary:hover { background: var(--verde-escuro); }
+
+.btn--ghost {
+  background: transparent;
+  border-color: rgba(255,255,255,0.4);
+  color: var(--branco);
+}
+.btn--ghost:hover { border-color: var(--branco); }
+
+.btn--card {
+  background: transparent;
+  border-color: var(--tinta);
+  color: var(--tinta);
+  width: 100%;
+  margin-top: 12px;
+}
+.btn--card:hover { background: var(--tinta); color: var(--branco); }
+
+.btn--block { width: 100%; }
+
+.btn--whatsapp { background: var(--whatsapp); color: var(--branco); margin-top: 8px; }
+.btn--whatsapp:hover { background: #1ea952; }
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--tinta);
+  color: var(--branco);
+}
+
+.header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  color: var(--branco);
+  font-family: var(--fonte-mono);
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.brand__bracket { color: var(--verde); }
+.brand__sub { font-size: 0.7rem; color: var(--texto-muted); letter-spacing: 0.02em; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.nav a { color: rgba(255,255,255,0.85); font-weight: 500; font-size: 0.95rem; }
+.nav a:hover { color: var(--branco); }
+.nav__cta {
+  background: var(--verde);
+  color: var(--branco) !important;
+  padding: 8px 16px;
+  border-radius: var(--raio);
+}
+.nav__cta:hover { background: var(--verde-escuro); }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  background: var(--tinta);
+  color: var(--branco);
+  padding: 72px 0 88px;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.eyebrow {
+  font-family: var(--fonte-mono);
+  color: var(--verde);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.hero h1 { color: var(--branco); }
+
+.hero__lead { color: rgba(255,255,255,0.75); font-size: 1.05rem; }
+
+.hero__actions { display: flex; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
+
+/* Mock de terminal — identidade visual "código" do hero */
+.terminal {
+  background: #0b0d13;
+  border: 1px solid #262b3a;
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+.terminal__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #161a24;
+  border-bottom: 1px solid #262b3a;
+}
+.terminal__dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.terminal__dot--red { background: #ff5f56; }
+.terminal__dot--yellow { background: #ffbd2e; }
+.terminal__dot--green { background: #27c93f; }
+.terminal__title { margin-left: 8px; font-family: var(--fonte-mono); font-size: 0.75rem; color: #7b8399; }
+
+.terminal__body {
+  margin: 0;
+  padding: 20px;
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  color: #d7dce5;
+  overflow-x: auto;
+}
+.tk-com { color: #6b7280; }
+.tk-key { color: #7aa2f7; }
+.tk-str { color: #9ece6a; }
+.tk-fn  { color: #e0af68; }
+
+/* =========================================================
+   SEÇÕES GERAIS
+   ========================================================= */
+.section { padding: 80px 0; }
+.section--alt { background: var(--papel-alt); }
+.section__lead { font-size: 1.05rem; margin-bottom: 40px; }
+
+/* =========================================================
+   CARDS DE SERVIÇO
+   ========================================================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--azul);
+  border-radius: var(--raio);
+  padding: 24px;
+}
+
+/* =========================================================
+   EXEMPLOS
+   ========================================================= */
+.exemplos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.exemplo {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 24px;
+}
+.exemplo__tag {
+  display: inline-block;
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--azul);
+  border: 1px solid var(--azul);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   COMO FUNCIONA (lista de passos)
+   ========================================================= */
+.passos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 28px;
+}
+.passo {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.passo__numero {
+  font-family: var(--fonte-mono);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--azul);
+}
+.passo h3 { margin-bottom: 4px; }
+.passo p { margin: 0; }
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 32px;
+}
+
+.form__row { display: flex; flex-direction: column; gap: 6px; }
+.form__row--full { grid-column: 1 / -1; }
+
+label { font-size: 0.9rem; font-weight: 600; }
+
+input, select, textarea {
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+  padding: 11px 14px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: var(--papel);
+  color: var(--tinta);
+}
+textarea { resize: vertical; min-height: 120px; }
+
+/* Campo-armadilha anti-spam (não aparece para pessoas) */
+.hidden-field { position: absolute; left: -9999px; }
+
+.form__erro {
+  color: #d64545;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* Tela de sucesso pós-envio */
+.sucesso {
+  margin-top: 24px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--verde);
+  border-radius: var(--raio);
+  padding: 28px;
+}
+.sucesso h3 { color: var(--verde-escuro); }
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+.footer {
+  background: var(--tinta);
+  color: rgba(255,255,255,0.7);
+  padding: 24px 0;
+  font-size: 0.85rem;
+}
+.footer__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer a { color: rgba(255,255,255,0.85); }
+.footer a:hover { color: var(--branco); }
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width: 860px) {
+  .hero__grid { grid-template-columns: 1fr; }
+  .nav { gap: 16px; }
+}
+
+@media (max-width: 640px) {
+  .header__row { padding: 14px 20px; }
+  .nav { width: 100%; justify-content: space-between; }
+  .hero { padding: 48px 0 56px; }
+  .section { padding: 56px 0; }
+  .form { grid-template-columns: 1fr; padding: 24px; }
+}

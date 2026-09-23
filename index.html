@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nickolas Martins | Sites e Sistemas</title>
+  <meta name="description" content="Criação de sites e sistemas web personalizados: landing pages, sites profissionais, portfólios e sistemas sob medida.">
+
+  <!-- Fontes: Space Grotesk para títulos (visual técnico), Inter para o corpo do texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="header" id="topo">
+    <div class="container header__row">
+      <a href="#topo" class="brand">
+        <span class="brand__bracket">&lt;</span>Nickolas Martins<span class="brand__bracket">/&gt;</span>
+        <span class="brand__sub">Sites e Sistemas</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#exemplos">Exemplos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#orcamento" class="nav__cta">Solicitar orçamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Desenvolvimento web sob medida</p>
+          <h1>Seu site, construído do jeito certo desde a primeira linha de código.</h1>
+          <p class="hero__lead">
+            Sou desenvolvedor freelancer e crio sites e sistemas web personalizados
+            para negócios que precisam de presença online rápida, funcional e fácil de manter.
+          </p>
+          <div class="hero__actions">
+            <a href="#orcamento" class="btn btn--primary">Solicitar orçamento</a>
+            <a href="#exemplos" class="btn btn--ghost">Ver exemplos</a>
+          </div>
+        </div>
+
+        <!-- Mock de terminal: reforça a identidade "dev" sem usar imagem externa -->
+        <div class="terminal" aria-hidden="true">
+          <div class="terminal__bar">
+            <span class="terminal__dot terminal__dot--red"></span>
+            <span class="terminal__dot terminal__dot--yellow"></span>
+            <span class="terminal__dot terminal__dot--green"></span>
+            <span class="terminal__title">orcamento.js</span>
+          </div>
+          <pre class="terminal__body"><code><span class="tk-com">// novo projeto</span>
+<span class="tk-key">const</span> cliente = {
+  servico: <span class="tk-str">"Site Profissional"</span>,
+  prazo: <span class="tk-str">"combinar com o cliente"</span>,
+  status: <span class="tk-str">"em orçamento"</span>
+};
+
+<span class="tk-fn">iniciarProjeto</span>(cliente);
+<span class="tk-com">// &gt; resposta em até 1 dia útil</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVIÇOS ===================== -->
+    <section class="section" id="servicos">
+      <div class="container">
+        <h2>Meus serviços</h2>
+        <p class="section__lead">Escolha o tipo de site que mais se encaixa no seu momento. Todos os projetos são responsivos e otimizados para carregar rápido.</p>
+
+        <!-- Cada card carrega o tipo de serviço em data-servico, usado pelo script.js
+             para pré-selecionar o campo do formulário ao clicar em "Tenho interesse" -->
+        <div class="cards" id="listaServicos">
+          <article class="card" data-servico="Landing Page">
+            <h3>Landing Page</h3>
+            <p>Página única, direta ao ponto, feita para apresentar um produto, serviço ou campanha e converter visitantes em contato.</p>
+            <button type="button" class="btn btn--card">Tenho interesse</button>
+          </article>
+
+          <article class="card" data-servico="Site Profissional">
+            <h3>Site Profissional</h3>
+            <p>Site institucional completo, com várias páginas, para empresas que precisam transmitir credibilidade e organizar suas informações.</p>
+            <button type="button" class="btn btn--card">Tenho interesse</button>
+          </article>
+
+          <article class="card" data-servico="Site para Consultório">
+            <h3>Site para Consultório</h3>
+            <p>Site pensado para profissionais da saúde: apresentação, especialidades, convênios e um caminho claro para agendamento.</p>
+            <button type="button" class="btn btn--card">Tenho interesse</button>
+          </article>
+
+          <article class="card" data-servico="Site para Pequenos Negócios">
+            <h3>Site para Pequenos Negócios</h3>
+            <p>Solução enxuta para lojas, prestadores de serviço e negócios locais colocarem informações e contato online rapidamente.</p>
+            <button type="button" class="btn btn--card">Tenho interesse</button>
+          </article>
+
+          <article class="card" data-servico="Portfólio Profissional">
+            <h3>Portfólio Profissional</h3>
+            <p>Vitrine para fotógrafos, designers, artistas e outros profissionais criativos mostrarem seus trabalhos com destaque.</p>
+            <button type="button" class="btn btn--card">Tenho interesse</button>
+          </article>
+
+          <article class="card" data-servico="Sistema Web Personalizado">
+            <h3>Sistema Web Personalizado</h3>
+            <p>Sistema sob medida para um processo específico do seu negócio: cadastros, cobranças, painéis de controle e mais.</p>
+            <button type="button" class="btn btn--card">Tenho interesse</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXEMPLOS ===================== -->
+    <section class="section section--alt" id="exemplos">
+      <div class="container">
+        <h2>Exemplos do que eu entrego</h2>
+        <p class="section__lead">Alguns tipos de projeto que já fazem parte do meu fluxo de trabalho.</p>
+
+        <div class="exemplos">
+          <div class="exemplo">
+            <div class="exemplo__tag">Landing Page</div>
+            <p>Uma página de vendas para o lançamento de um curso online, com formulário de inscrição integrado.</p>
+          </div>
+          <div class="exemplo">
+            <div class="exemplo__tag">Institucional</div>
+            <p>Site de uma clínica odontológica com seção de especialidades e botão de agendamento via WhatsApp.</p>
+          </div>
+          <div class="exemplo">
+            <div class="exemplo__tag">Sistema</div>
+            <p>Painel simples para uma síndica acompanhar pagamentos e cobranças de um condomínio pequeno.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COMO FUNCIONA ===================== -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <h2>Como funciona</h2>
+        <p class="section__lead">O processo, do primeiro contato até o site no ar.</p>
+
+        <!-- Aqui a numeração faz sentido: é uma sequência real de etapas -->
+        <ol class="passos">
+          <li class="passo">
+            <span class="passo__numero">01</span>
+            <div>
+              <h3>Você envia o orçamento</h3>
+              <p>Preenche o formulário abaixo contando o que precisa.</p>
+            </div>
+          </li>
+          <li class="passo">
+            <span class="passo__numero">02</span>
+            <div>
+              <h3>Eu analiso e respondo</h3>
+              <p>Recebo os dados por e-mail e retorno com uma proposta.</p>
+            </div>
+          </li>
+          <li class="passo">
+            <span class="passo__numero">03</span>
+            <div>
+              <h3>Alinhamos os detalhes</h3>
+              <p>Conversamos pelo WhatsApp para fechar escopo e prazo.</p>
+            </div>
+          </li>
+          <li class="passo">
+            <span class="passo__numero">04</span>
+            <div>
+              <h3>Seu site é desenvolvido</h3>
+              <p>Construo, ajusto e entrego o projeto combinado.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== FORMULÁRIO DE ORÇAMENTO ===================== -->
+    <section class="section section--alt" id="orcamento">
+      <div class="container container--form">
+        <h2>Solicitar orçamento</h2>
+        <p class="section__lead">Preencha os dados abaixo. Assim que eu receber, entro em contato.</p>
+
+        <!--
+          FORMULÁRIO NETLIFY FORMS
+          - data-netlify="true": diz à Netlify para detectar este formulário no momento do build/deploy.
+          - name="orcamento": nome que vai aparecer no painel da Netlify.
+          - netlify-honeypot="bot-field": campo-armadilha anti-spam, escondido via CSS.
+          - O envio real é feito por JavaScript (fetch), então o formulário NÃO usa o atributo
+            "action" nem recarrega a página — veja script.js.
+        -->
+        <form
+          name="orcamento"
+          id="formOrcamento"
+          class="form"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <!-- Campo oculto obrigatório para a Netlify identificar o formulário no envio via fetch -->
+          <input type="hidden" name="form-name" value="orcamento">
+
+          <!-- Campo-armadilha: bots costumam preenchê-lo, humanos não veem -->
+          <p class="hidden-field">
+            <label>Não preencha este campo: <input name="bot-field"></label>
+          </p>
+
+          <div class="form__row">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" name="nome" required autocomplete="name">
+          </div>
+
+          <div class="form__row">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="form__row">
+            <label for="whatsapp">WhatsApp *</label>
+            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(DDD) 9 9999-9999" autocomplete="tel">
+          </div>
+
+          <div class="form__row">
+            <label for="empresa">Empresa ou negócio</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Opcional">
+          </div>
+
+          <div class="form__row">
+            <label for="tipoSite">Tipo de site desejado *</label>
+            <select id="tipoSite" name="tipoSite" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="Landing Page">Landing Page</option>
+              <option value="Site Profissional">Site Profissional</option>
+              <option value="Site para Consultório">Site para Consultório</option>
+              <option value="Site para Pequenos Negócios">Site para Pequenos Negócios</option>
+              <option value="Portfólio Profissional">Portfólio Profissional</option>
+              <option value="Sistema Web Personalizado">Sistema Web Personalizado</option>
+              <option value="Ainda não sei">Ainda não sei</option>
+            </select>
+          </div>
+
+          <div class="form__row">
+            <label for="faixaOrcamento">Faixa de orçamento *</label>
+            <select id="faixaOrcamento" name="faixaOrcamento" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="Até R$ 500">Até R$ 500</option>
+              <option value="R$ 500 a R$ 1.500">R$ 500 a R$ 1.500</option>
+              <option value="R$ 1.500 a R$ 3.000">R$ 1.500 a R$ 3.000</option>
+              <option value="Acima de R$ 3.000">Acima de R$ 3.000</option>
+              <option value="Ainda não defini">Ainda não defini</option>
+            </select>
+          </div>
+
+          <div class="form__row form__row--full">
+            <label for="descricao">Descrição do projeto *</label>
+            <textarea id="descricao" name="descricao" rows="5" required placeholder="Conte o que você precisa: objetivo do site, referências, prazo, etc."></textarea>
+          </div>
+
+          <div class="form__row form__row--full">
+            <button type="submit" class="btn btn--primary btn--block" id="btnEnviar">
+              Solicitar orçamento
+            </button>
+            <p class="form__erro" id="formErro" role="alert" hidden></p>
+          </div>
+        </form>
+
+        <!-- Tela de sucesso: fica escondida até o envio funcionar (ver script.js) -->
+        <div class="sucesso" id="telaSucesso" hidden>
+          <h3>Solicitação enviada com sucesso!</h3>
+          <p>Recebi os seus dados e vou te responder em breve. Se preferir, já pode continuar a conversa comigo pelo WhatsApp.</p>
+          <a href="#" id="btnWhatsapp" class="btn btn--whatsapp" target="_blank" rel="noopener">
+            Continuar pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="footer">
+    <div class="container footer__row">
+      <p>&copy; <span id="anoAtual"></span> Nickolas Martins | Sites e Sistemas — Projeto de demonstração.</p>
+      <a href="#topo">Voltar ao topo</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
