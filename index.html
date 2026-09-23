@@ -197,12 +197,13 @@
             "action" nem recarrega a página — veja script.js.
         -->
         <form
-          name="orcamento"
-          id="formOrcamento"
-          class="form"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-        >
+  name="orcamento"
+  id="formOrcamento"
+  class="form"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+>
           <!-- Campo oculto obrigatório para a Netlify identificar o formulário no envio via fetch -->
           <input type="hidden" name="form-name" value="orcamento">
 
